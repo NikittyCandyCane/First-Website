@@ -48,5 +48,8 @@ def create(response):
     form = CreateNewList()
     return render(response, 'main/create.html', {'form':form})
 
+def fun(response):
+    return render(fun, 'main/fun.html', {})
+
 # Post is for encrypted information
 # Get is for simply retrieving information
