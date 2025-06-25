@@ -17,8 +17,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 STATIC_ROOT = str(BASE_DIR / 'staticfiles')
 
 
-print('Settings file loaded:' __file__)
-print('BASE_DIR:' BASE_DIR)
+print('Settings file loaded:', __file__)
+print('BASE_DIR:', BASE_DIR)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
