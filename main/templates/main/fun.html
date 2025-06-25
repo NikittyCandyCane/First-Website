@@ -7,15 +7,14 @@
     <form method="post">
         {% csrf_token %}
         <ul>
-            {% for animal in animal.item_set.all %}
-                {% print(animal) %}kmkmkmkmkmkmmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmmkkmkmmmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkm
-                {% if animal.isfavourite == False %}klklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklkkkkkkklklklklklklkllklklklklklklklklklklklklklklkklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklk
-                    <li><input type="checkbox", value="clicked", name="c{{item.id}}">{{animal.name}}</li>
+            {% for i in animal %}
+                {% if i.isfavourite %}
+                    <li><input type="checkbox", value="clicked", name="c{{i.isfavourite}}">{{i.name}}</li>
                 {% else %}
-                    <li><input type="checkbox", value="clicked", name="c{{item.id}}" checked>{{animal.name}}</li>
+                    <li><input type="checkbox", value="clicked", name="c{{i.isfavourite}}" checked>{{i.name}}</li>
                 {% endif %}
             {% endfor %}
         </ul>
-        <button type="submit">Submit</button>
+        <button type="submit">Save</button>
     </form>
 {% endblock %}

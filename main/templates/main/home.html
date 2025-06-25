@@ -2,4 +2,9 @@
 
 {% block content %}
 <h1> Home Page </h1>
+<ul>
+    {% for i in links %}
+    <li><a href='{{i}}/'>{{i}}</a></li>
+    {% endfor %}
+</ul>
 {% endblock %}
