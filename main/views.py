@@ -21,3 +21,6 @@ def home(request):
 
 def me(request):
     return render(request, 'main/me.html', {})
+
+def catpics(request):
+    return render(request, 'main/catpics.html', {})
