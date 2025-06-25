@@ -1,8 +1,51 @@
+<html>
 <head>
 <style>
     body {
         background-color: rgb(253, 220, 226)
     }
+    h1 {
+    margin-top: 30px;
+    }
+    h1 {
+        margin-left: 30px;
+    }
+    p {
+        margin-left: 20px;
+    }
+    label {
+        margin-left: 20px;
+    }
+    img {
+        margin-left: 20px;
+    }
 </style>
 </head>
 <h1>Hello, {{nickname}}!</h1>
+
+<p><span style='font-size:19px;'>This is my website!!!! It took a lot of time to make this.</span><br><i>Django is so complicated... </i></p>
+
+<form method="POST">
+{% csrf_token %}
+<label for="question">How are you liking it so far?: </label>
+<input type="text" id="question" name="question">
+<button type="submit">Submit</button>
+</form>
+
+{% if isgood != 'n/a' %}
+    {% if isgood == 'did not understand' %}
+        <p>I lowk did not understand what you just said but um ok ...</p>
+    {% elif isgood %}
+        <p><b>OH MA GOSH THANK YOUU .</b></p>
+    {% elif not isgood %}
+        <p>oh screw you then.</p>
+    {% endif %}
+    
+    <p><b><i><span style='font-size:30px;'>PICTURE OF A CAT!!!!!</span></i></b></p>
+    <img src="https://pbs.twimg.com/profile_images/1789691635858628609/9bViubRV_400x400.jpg" alt="A cute cat named nana!">
+
+    <p>What do you want to do now ?</p>
+
+
+{% endif %}
+</html>
