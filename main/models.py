@@ -16,3 +16,10 @@ class Item(models.Model):
 
     def __str__(self):
         return self.text
+    
+class Animal(models.Model):
+    name = models.CharField(max_length=100)
+    isfavourite = models.BooleanField()
+
+    def __str__(self):
+        return self.name

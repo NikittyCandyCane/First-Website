@@ -1,7 +1,7 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
-from .models import ToDoList, Item
-from .forms import CreateNewList
+from .models import ToDoList, Item, Animal
+from .forms import CreateNewList, AnimalForm
 
 # Create your views here.
 
@@ -48,8 +48,15 @@ def create(response):
     form = CreateNewList()
     return render(response, 'main/create.html', {'form':form})
 
-def fun(response):
-    return render(fun, 'main/fun.html', {})
+def fun(request):
+    if request.method == 'POST':
+        form = AnimalForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect('/fun')
+    else:
+        form = AnimalForm()
+    return render(request, 'main/fun.html', {'form': form})
 
 # Post is for encrypted information
 # Get is for simply retrieving information
