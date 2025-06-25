@@ -31,8 +31,23 @@ def maze(request):
 def maze_straight(request):
     return render(request, 'main/maze_straight.html', {})
 
+def maze_straight_straight(request):
+    return render(request, 'main/maze_straight_straight.html', {})
+
 def maze_straight_straight_right(request):
-    return render(reqest)
+    return render(request, 'main/maze_straight_straight_right.html', {})
+
+def maze_straight_straight_right_straight(request):
+    return render(request, 'main/maze_straight_straight_right_straight.html', {})
+
+def maze_straight_straight_right_straight_left(request):
+    return render(request, 'main/maze_straight_straight_right_straight_left.html', {})
+
+def maze_straight_straight_right_straight_left_left(request):
+    return render(request, 'main/maze_straight_straight_right_straight_left_left.html', {})
 
 def maze_deadend(request):
     return render(request, 'main/maze_deadend.html', {})
+
+def maze_straight_straight_right_right(request):
+    return render(request, 'main/maze_straight_straight_right_right.html', {})
