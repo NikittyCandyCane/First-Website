@@ -30,7 +30,8 @@ def index(response, id):
     return render(response, 'main/list.html', {'ls':ls})
 
 def home(response):
-    return render(response, 'main/home.html', {})
+    links = ['create', 'fun']
+    return render(response, 'main/home.html', {'links' : links})
 
 def create(response):
     if response.method == 'POST':
@@ -50,13 +51,12 @@ def create(response):
 
 def fun(request):
     if request.method == 'POST':
-        form = AnimalForm(request.POST)
-        if form.is_valid():
-            form.save()
+        animal = AnimalForm(request.POST)
+        if animal.is_valid():
+            animal.save()
             return redirect('/fun')
     else:
-        form = AnimalForm()
-    return render(request, 'main/fun.html', {'form': form})
-
+        animal = AnimalForm()
+    return render(request, 'main/fun.html', {'animal': animal})
 # Post is for encrypted information
 # Get is for simply retrieving information

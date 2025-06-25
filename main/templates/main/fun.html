@@ -3,10 +3,19 @@
 {% block title %}Favourite Animals{% endblock %}
 
 {% block content %}
-    <h1>Add an animal</h1>
+    <h1>Favourite Animals</h1>
     <form method="post">
         {% csrf_token %}
-        {{ form.as_p}}
+        <ul>
+            {% for animal in animal.item_set.all %}
+                {% print(animal) %}kmkmkmkmkmkmmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmmkkmkmmmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkmkm
+                {% if animal.isfavourite == False %}klklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklkkkkkkklklklklklklkllklklklklklklklklklklklklklklkklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklklk
+                    <li><input type="checkbox", value="clicked", name="c{{item.id}}">{{animal.name}}</li>
+                {% else %}
+                    <li><input type="checkbox", value="clicked", name="c{{item.id}}" checked>{{animal.name}}</li>
+                {% endif %}
+            {% endfor %}
+        </ul>
         <button type="submit">Submit</button>
     </form>
 {% endblock %}
