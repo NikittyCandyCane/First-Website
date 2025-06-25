@@ -1,0 +1,26 @@
+{% extends 'main/base.html' %}
+
+{% block colour %}rgb(197, 255, 241){% endblock %}
+
+{% block link_size %}20px{% endblock %}
+
+{% block img_margin %}20px{% endblock %}
+
+{% block title %}Maze!{% endblock %}
+
+{% block content %}
+<h1>Maze</h1>
+<p>While walking in some caves spooky caves with skeletons ALL around, you stumble and trip over a miniature McDonalds restaurant.<br>After reaching your hand inside, you pick up a map...</p>
+<img src="https://www.shutterstock.com/image-vector/find-way-bone-vector-maze-260nw-1930878101.jpg" alt="A map with directions" height="250px" width="250px">
+<br><br>
+<p>So... which way are you heading?</p>
+<img src="https://www.rochestersubway.com/images/photos/csoap-deep-rock-sewer-tunnel-rochester-19.jpg" alt="Cave tunnel with left and right" height="250px" width="250px">
+<br><br>
+<a href="/maze/straight">Straight</a>
+<a href="/maze/deadend">Right</a>
+<br><br><br><br>
+<a href="/">Home</a>
+<a href="/me/">Me</a>
+<a href="/catpics">Catpics</a>
+
+{% endblock %}

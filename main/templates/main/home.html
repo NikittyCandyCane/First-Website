@@ -9,7 +9,7 @@
     margin-top: 30px;
     }
     h1 {
-        margin-left: 30px;
+        margin-left: 50px;
     }
     p {
         margin-left: 20px;
@@ -23,18 +23,41 @@
     a {
         margin-left: 20px;
     }
+    
+    @keyframes fadeIn {
+        from { opacity:0; }
+        to { opacity: 1; }
+    }
+
+    .fade-in-text {
+        animation: fadeIn 2s ease-in forwards;
+    }
+
 </style>
 </head>
-<h1>Hello, {{nickname}}!</h1>
+{% if isgood == 'n/a' %}
+    <h1 class="fade-in-text">Hello, {{nickname}}!</h1>
 
-<p><span style='font-size:19px;'>This is my website!!!! It took a lot of time to make this.</span><br><i>Django is so complicated... </i></p>
+    <p class="fade-in-text"><span style='font-size:19px;'>This is my website!!!! It took a lot of time to make this.</span><br><i>Django is so complicated... </i></p>
 
-<form method="POST">
-{% csrf_token %}
-<label for="question">How are you liking it so far?: </label>
-<input type="text" id="question" name="question">
-<button type="submit">Submit</button>
-</form>
+    <form method="POST">
+    {% csrf_token %}
+    <label for="question" class="fade-in-text">How are you liking it so far?: </label>
+    <input type="text" id="question" name="question" class="fade-in-text">
+    <button type="submit" class="fade-in-text">Submit</button>
+    </form>
+{% else %}
+    <h1>Hello, {{nickname}}!</h1>
+
+    <p><span style='font-size:19px;'>This is my website!!!! It took a lot of time to make this.</span><br><i>Django is so complicated... </i></p>
+
+    <form method="POST">
+    {% csrf_token %}
+    <label for="question">How are you liking it so far?: </label>
+    <input type="text" id="question" name="question">
+    <button type="submit">Submit</button>
+    </form>
+{% endif %}
 
 {% if isgood != 'n/a' %}
     {% if isgood == 'did not understand' %}
@@ -51,6 +74,7 @@
     <p><br>What do you want to do now ?</p>
     <a href="/me/">Me</a>
     <a href="/catpics">Catpics</a>
+    <a href="/maze">Maze</a>
 
 {% endif %}
 </html>

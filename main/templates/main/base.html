@@ -1,9 +1,9 @@
 <html>
 <head>
-    <title>Cat Pics!</title>
+    <title>{% block title %}{% endblock %}</title>
     <style>
     body {
-        background-color: rgb(253, 220, 226)
+        background-color: {% block colour %}rgb(253, 220, 226){% endblock %};
     }
     h1 {
     margin-top: 30px;
@@ -13,15 +13,16 @@
     }
     p {
         margin-left: 20px;
+        font-size: 20px;
     }
     label {
         margin-left: 20px;
     }
     img {
-        margin-left: 0px;
+        margin-left: {% block img_margin %}0px{% endblock %};
     }
     a {
-        font-size: 100px;
+        font-size: {% block link_size %}100px{% endblock %};
         margin-left: 20px;
     }
 </style>
